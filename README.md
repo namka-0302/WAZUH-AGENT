@@ -12,13 +12,14 @@ wget http://10.0.13.179/wazuh-agent_4.14.0-1_amd64.deb && sudo WAZUH_MANAGER='10
 wget http://10.0.13.179/wazuh-agent_4.14.0-1_arm64.deb && sudo WAZUH_MANAGER='10.0.13.179' WAZUH_AGENT_GROUP='default' WAZUH_AGENT_NAME='Your_Device' dpkg -i ./wazuh-agent_4.14.0-1_arm64.deb
 
 *Windows*
-Invoke-WebRequest -Uri http://10.0.13.179/wazuh-agent-4.14.0-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='10.0.13.179' WAZUH_AGENT_GROUP='default' WAZUH_AGENT_NAME='Your_Device'
+- Invoke-WebRequest -Uri http://10.0.13.179/wazuh-agent-4.14.0-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='10.0.13.179' WAZUH_AGENT_GROUP='default' WAZUH_AGENT_NAME='Your_Device'
 
 B2: Khởi chạy wazuh-agent
+
 *Linux*
-sudo systemctl daemon-reload
-sudo systemctl enable wazuh-agent
-sudo systemctl start wazuh-agent
+- sudo systemctl daemon-reload
+- sudo systemctl enable wazuh-agent
+- sudo systemctl start wazuh-agent
 
 *Windows*
-NET START Wazuh
+- NET START Wazuh
